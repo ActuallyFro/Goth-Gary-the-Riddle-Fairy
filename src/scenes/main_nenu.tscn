@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://562ipuamiqlq"]
+[gd_scene load_steps=5 format=3 uid="uid://562ipuamiqlq"]
 
 [ext_resource type="Texture2D" uid="uid://c2uq7l7fehvwp" path="res://resources/gfx/backgrounds/Main-Menu.png" id="1_tenoc"]
+[ext_resource type="Script" path="res://src/scripts/Main-menu.gd" id="2_3cw6k"]
 [ext_resource type="FontFile" uid="uid://ctj8l1v8cybsf" path="res://resources/font/hf-free-complete/compass-pro-v1.1/CompassPro.ttf" id="2_v573c"]
 [ext_resource type="AudioStream" uid="uid://ecjkhpco8cqe" path="res://resources/songs/Denial_of_Fate.mp3" id="3_dybof"]
 
@@ -10,6 +11,7 @@
 position = Vector2(575.5, 324.25)
 scale = Vector2(0.599479, 0.599537)
 texture = ExtResource("1_tenoc")
+script = ExtResource("2_3cw6k")
 
 [node name="Title-GGtRF2" type="RichTextLabel" parent="."]
 offset_left = 17.0
