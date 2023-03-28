@@ -6,6 +6,7 @@ var MainMenuOptions = ["Play", "Options", "Quit"]
 var menuMenuChoice = 0
 
 var isMenuChanged = false
+var isQuitSelected = false
 
 func _ready():
 	pass # Replace with function body.
@@ -36,11 +37,17 @@ func _input(event):
 			menuMenuChoice = 0
 		isMenuChanged = true
 
+	if event.is_action_pressed("enter"):
+		match menuMenuChoice:
+			2:
+				$SFX/Screech.play()
+				isQuitSelected = true
+
 	if isMenuChanged:
 		$MenuOptions/VBoxContainer/Play.add_theme_color_override("font_color",Color(1,1,1))
 		$MenuOptions/VBoxContainer/Options.add_theme_color_override("font_color",Color(1,1,1))
 		$MenuOptions/VBoxContainer/Quit.add_theme_color_override("font_color",Color(1,1,1))
-		$SFX/Crow1.play(0.0)
+		$SFX/Crow1.play()
 
 		match menuMenuChoice:
 			0:
@@ -51,5 +58,8 @@ func _input(event):
 				$MenuOptions/VBoxContainer/Quit.add_theme_color_override("font_color",Color(1,0,0))
 		isMenuChanged = false
 
-#func _process(delta):
-#	pass
+func _process(delta):
+	if isQuitSelected:
+		if !$SFX/Screech.is_playing():
+			get_tree().quit()
+	pass
