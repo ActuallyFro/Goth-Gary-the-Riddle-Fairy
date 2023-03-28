@@ -30,14 +30,14 @@ func _input(event):
 		if currentStage == "MainMenu":
 			get_tree().quit()
 
-	if event.is_action_pressed("arrow_down"):
+	if event.is_action_pressed("arrow_up"):
 		if currentStage == "MainMenu":
 			menuMenuChoice -= 1
 			if menuMenuChoice < 0:
 				menuMenuChoice = 2
 			isMenuChanged = true
 			
-	if event.is_action_pressed("arrow_up"):
+	if event.is_action_pressed("arrow_down"):
 		if currentStage == "MainMenu":
 			menuMenuChoice += 1
 			if menuMenuChoice > 2:
@@ -45,9 +45,19 @@ func _input(event):
 			isMenuChanged = true
 
 	if isMenuChanged:
-		# if currentStage == "MainMenu":
-			# set all label colors to white
-			
+		if currentStage == "MainMenu":
+			$MenuOptions/VBoxContainer/Play.add_theme_color_override("font_color",Color(1,1,1))
+			$MenuOptions/VBoxContainer/Options.add_theme_color_override("font_color",Color(1,1,1))
+			$MenuOptions/VBoxContainer/Quit.add_theme_color_override("font_color",Color(1,1,1))
+
+			match menuMenuChoice:
+				0:
+					$MenuOptions/VBoxContainer/Play.add_theme_color_override("font_color",Color(1,0,0))
+				1:
+					$MenuOptions/VBoxContainer/Options.add_theme_color_override("font_color",Color(1,0,0))
+				2:
+					$MenuOptions/VBoxContainer/Quit.add_theme_color_override("font_color",Color(1,0,0))
+
 			# $MenuOptions/VBoxContainer/Play.label_settings.them
 			# $Main-menu/MenuOptions/VBoxContainer/Options.font_color = Color(1,1,1)
 			# $Main-menu/MenuOptions/VBoxContainer/Quit.font_color = Color(1,1,1)
@@ -64,5 +74,5 @@ func _input(event):
 		isMenuChanged = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#func _process(delta):
+#	pass
