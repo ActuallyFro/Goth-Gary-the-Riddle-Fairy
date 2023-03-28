@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://562ipuamiqlq"]
+[gd_scene load_steps=6 format=3 uid="uid://562ipuamiqlq"]
 
 [ext_resource type="Texture2D" uid="uid://c2uq7l7fehvwp" path="res://resources/gfx/backgrounds/Main-Menu.png" id="1_tenoc"]
 [ext_resource type="Script" path="res://src/scripts/Main-menu.gd" id="2_3cw6k"]
 [ext_resource type="FontFile" uid="uid://ctj8l1v8cybsf" path="res://resources/font/hf-free-complete/compass-pro-v1.1/CompassPro.ttf" id="2_v573c"]
 [ext_resource type="AudioStream" uid="uid://ecjkhpco8cqe" path="res://resources/songs/Denial_of_Fate.mp3" id="3_dybof"]
+[ext_resource type="AudioStream" uid="uid://brr4qrm8bh4vd" path="res://resources/sfx/Birds/bluejayscreech.wav" id="5_g60tg"]
 
 [node name="MainNenu" type="Node2D"]
 
@@ -39,6 +40,15 @@ tab_size = 5
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Music"]
 stream = ExtResource("3_dybof")
 autoplay = true
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Crow" type="AudioStreamPlayer" parent="SFX"]
+
+[node name="Crow1" type="AudioStreamPlayer" parent="SFX"]
+
+[node name="Screech" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_g60tg")
 
 [node name="MenuOptions" type="Node" parent="."]
 
