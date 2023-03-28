@@ -7,12 +7,12 @@
 [ext_resource type="AudioStream" uid="uid://brr4qrm8bh4vd" path="res://resources/sfx/Birds/bluejayscreech.wav" id="5_g60tg"]
 
 [node name="MainNenu" type="Node2D"]
+script = ExtResource("2_3cw6k")
 
-[node name="Main-menu" type="Sprite2D" parent="."]
+[node name="Background-Main-menu" type="Sprite2D" parent="."]
 position = Vector2(575.5, 324.25)
 scale = Vector2(0.599479, 0.599537)
 texture = ExtResource("1_tenoc")
-script = ExtResource("2_3cw6k")
 
 [node name="Title-GGtRF2" type="RichTextLabel" parent="."]
 offset_left = 17.0
@@ -26,6 +26,7 @@ text = "Goth Gary the Riddle Fairy"
 tab_size = 5
 
 [node name="Title-GGtRF-MainColor" type="RichTextLabel" parent="Title-GGtRF2"]
+layout_mode = 0
 offset_left = -6.0
 offset_top = -7.0
 offset_right = 764.0
@@ -60,9 +61,16 @@ offset_bottom = 583.0
 
 [node name="Play" type="Label" parent="MenuOptions/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_v573c")
 theme_override_font_sizes/font_size = 58
 text = "Play"
+
+[node name="Options" type="Label" parent="MenuOptions/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_v573c")
+theme_override_font_sizes/font_size = 58
+text = "Options"
 
 [node name="Quit" type="Label" parent="MenuOptions/VBoxContainer"]
 layout_mode = 2
