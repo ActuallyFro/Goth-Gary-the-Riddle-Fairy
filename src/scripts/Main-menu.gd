@@ -40,6 +40,7 @@ func _input(event):
 		$MenuOptions/VBoxContainer/Play.add_theme_color_override("font_color",Color(1,1,1))
 		$MenuOptions/VBoxContainer/Options.add_theme_color_override("font_color",Color(1,1,1))
 		$MenuOptions/VBoxContainer/Quit.add_theme_color_override("font_color",Color(1,1,1))
+		$SFX/Crow1.play(0.0)
 
 		match menuMenuChoice:
 			0:
