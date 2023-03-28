@@ -1,4 +1,10 @@
+Main Menu
 From: https://www.photoroom.com/backgrounds/Creepy-horror-cemetery-with-figure-in-background-night.-Stars-moon.
+License file: CompVis/stable-diffusion-license
+Source: https://huggingface.co/spaces/CompVis/stable-diffusion-license
+
+Playing_01
+From: https://www.photoroom.com/backgrounds/Goth-Gary-the-Riddle-Fairy-in-a-graveyard-at-night.-Male-fairy.-Animated.-New-Orleans-style.
 License file: CompVis/stable-diffusion-license
 Source: https://huggingface.co/spaces/CompVis/stable-diffusion-license
 
