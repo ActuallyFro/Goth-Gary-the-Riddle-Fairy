@@ -1,8 +1,75 @@
 {
   "Question-01": {
-  "question": "The more you have of me, the less you see. 
-  
-  What am I?",
-  "answer": "Darkness"
+    "question": "The more you have of me, the less you see. 
+    
+    What am I?",
+    "answer": "Darkness"
+  },
+
+  "Question-02": {
+
+    "question": "I'm light as a feather, yet the strongest man can't hold me for much more than a minute. 
+
+    What am I?",
+    "answer": "Breath"
+  },
+
+  "Question-03": {
+    "question": "The more you take, the more you leave behind. 
+
+    What am I?",
+    "answer": "Footsteps"
+  },
+
+  "Question-04": {
+    "question": "What has a heart that doesn't beat?",
+    "answer": "An artichoke"
+  },
+
+  "Question-05": {
+    "question": "I am always hungry, I must always be fed, the finger I touch, will soon turn red. 
+
+    What am I?",
+    "answer": "Fire"
+  },
+
+  "Question-06": {
+    "question": "I am not alive, but I grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me. 
+
+    What am I?",
+    "answer": "Fire"
+  },
+
+  "Question-07": {
+    "question": "The more you have of me, the less you see. 
+
+    What am I?",
+    "answer": "Darkness"
+  },
+
+  "Question-08": {
+    "question": "I am not alive, but I can die. I don't have a mouth, but water kills me. 
+
+    What am I?",
+    "answer": "A candle"
+  },
+
+  "Question-09": {
+    "question": "What is always in front of you but can't be seen?",
+    "answer": "The future"
+  },
+
+  "Question-10": {
+    "question": "I am taken from a mine and shut up in a wooden case, from which I am never released, and yet I am used by almost every person. 
+
+    What am I?",
+    "answer": "Pencil lead"
+  },
+
+  "Question-11": {
+    "question": "The more you search for me, the harder to find me. 
+
+    What am I?",
+    "answer": "Silence"
   }
 }
