@@ -31,9 +31,6 @@ theme_override_colors/background_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.704463, 0.786258, 0.730813, 1)
 theme_override_fonts/font = ExtResource("3_om140")
 theme_override_font_sizes/font_size = 45
-text = "The more you have of me, the less you see. 
-
-What am I?"
 editable = false
 deselect_on_focus_loss_enabled = false
 wrap_mode = 1
