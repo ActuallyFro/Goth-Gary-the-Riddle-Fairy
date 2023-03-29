@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgihgmvpbkxip"]
+[gd_scene load_steps=7 format=3 uid="uid://bgihgmvpbkxip"]
 
 [ext_resource type="Texture2D" uid="uid://bn1xa1pyucy12" path="res://resources/gfx/backgrounds/Playing_01.png" id="1_4vme0"]
 [ext_resource type="Script" path="res://src/scripts/playing.gd" id="1_fxdf8"]
 [ext_resource type="FontFile" uid="uid://ctj8l1v8cybsf" path="res://resources/font/hf-free-complete/compass-pro-v1.1/CompassPro.ttf" id="3_om140"]
 [ext_resource type="AudioStream" uid="uid://dbn8sfxeo1kog" path="res://resources/songs/Twisted.mp3" id="4_3kry7"]
+[ext_resource type="Shader" path="res://src/shader/playing-answer.gdshader" id="4_xjras"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mxgb"]
+shader = ExtResource("4_xjras")
+shader_parameter/height = 17.0
+shader_parameter/speed = 1.0
+shader_parameter/frequency = 23.0
 
 [node name="Playing" type="Node2D"]
 script = ExtResource("1_fxdf8")
@@ -20,21 +27,38 @@ offset_left = 35.0
 offset_top = 64.0
 offset_right = 493.0
 offset_bottom = 345.0
+theme_override_colors/background_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.704463, 0.786258, 0.730813, 1)
 theme_override_fonts/font = ExtResource("3_om140")
 theme_override_font_sizes/font_size = 45
 text = "The more you have of me, the less you see. 
 
 What am I?"
 editable = false
+deselect_on_focus_loss_enabled = false
 wrap_mode = 1
 
-[node name="Answer" type="TextEdit" parent="RiddleArea"]
+[node name="Input" type="TextEdit" parent="RiddleArea"]
 offset_left = 101.0
 offset_top = 536.0
 offset_right = 457.0
 offset_bottom = 595.0
+scale = Vector2(0.998618, 1.01725)
+theme_override_colors/background_color = Color(0, 0, 0, 0.733333)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(0, 0.356863, 0, 1)
 theme_override_fonts/font = ExtResource("3_om140")
 theme_override_font_sizes/font_size = 41
+
+[node name="Answer" type="Label" parent="RiddleArea"]
+material = SubResource("ShaderMaterial_5mxgb")
+offset_left = 831.0
+offset_top = 198.0
+offset_right = 1071.0
+offset_bottom = 265.0
+theme_override_colors/font_shadow_color = Color(0, 0.356863, 0, 1)
+theme_override_fonts/font = ExtResource("3_om140")
+theme_override_font_sizes/font_size = 68
 
 [node name="Music" type="Node" parent="."]
 
