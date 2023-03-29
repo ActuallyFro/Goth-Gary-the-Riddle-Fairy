@@ -25,8 +25,8 @@ texture = ExtResource("1_4vme0")
 [node name="Question" type="TextEdit" parent="RiddleArea"]
 offset_left = 35.0
 offset_top = 64.0
-offset_right = 493.0
-offset_bottom = 345.0
+offset_right = 450.0
+offset_bottom = 492.0
 theme_override_colors/background_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0.704463, 0.786258, 0.730813, 1)
 theme_override_fonts/font = ExtResource("3_om140")

@@ -11,11 +11,33 @@ var current_question
 var current_answer
 var current_index = 0
 
+var is_waiting_to_continue = false
+
 #func saveJSON():
 #	var file = FileAccess.open("res://resources/answers/Chapter1.csv", FileAccess.WRITE)
 #	var json = JSON.new()
 #	var json_string = json.stringify(file_data, "  ") 
 #	file.store_line(json_string)
+
+func loadNextQuestion():
+	var count=0
+	for i in file_data:
+		if count == current_index:
+			for j in file_data[i]:
+				if j == "question":
+					current_question = str(file_data[i][j])
+				if j == "answer":
+					current_answer = str(file_data[i][j])
+			break
+		count += 1
+	$RiddleArea/Question.text = current_question
+	$RiddleArea/Answer.text = ""
+	
+	print("[DEBUG] current_question " + current_question)
+	print("[DEBUG] current_answer " + current_answer)
+
+	$RiddleArea/Input.grab_focus()
+	
 
 func loadJSON():
 	if not FileAccess.file_exists("res://resources/answers/Chapter1.csv"):
@@ -33,34 +55,27 @@ func loadJSON():
 
 func _ready():
 	loadJSON()
-
-#	print("[DEBUG] Total objects in file_data: " + str(file_data.size()))
-	var count=0
-	for i in file_data:
-		if count == current_index:
-			for j in file_data[i]:
-				if j == "question":
-					current_question = str(file_data[i][j])
-				if j == "answer":
-					current_answer = str(file_data[i][j])
-			break
-		count += 1
-#	print("[DEBUG] current_question " + current_question)
-#	print("[DEBUG] current_answer " + current_answer)
-
-	$RiddleArea/Question.text = current_question
-	$RiddleArea/Input.grab_focus()
-
+	loadNextQuestion()
 
 
 func _input(event):
 	if event.is_action_pressed("enter"):
-		var userInput = $RiddleArea/Input.text
-		userInput = userInput.replace("\n", "")
-		if userInput == current_answer:
-			$RiddleArea/Answer.text = current_answer
+		if is_waiting_to_continue:
+			is_waiting_to_continue = false
+			current_index += 1
+			loadNextQuestion()
+
 		else:
-			$RiddleArea/Answer.text = "Try Again..."
+			var userInput = $RiddleArea/Input.text
+			# userInput = userInput.replace("\n", "")
+
+			if userInput.to_lower() == current_answer.to_lower():
+				$RiddleArea/Answer.text = current_answer
+				is_waiting_to_continue = true
+			else:
+				$RiddleArea/Answer.text = "Try Again..."
+
+			userInput = ""
 #		$RiddleArea/Input.text = $RiddleArea/Input.text.replace("\n", "")
 #		$RiddleArea/Input.text = $RiddleArea/Input.text.replace("\r", "")
 #		$RiddleArea/Answer.text = $RiddleArea/Answer.text = " "
